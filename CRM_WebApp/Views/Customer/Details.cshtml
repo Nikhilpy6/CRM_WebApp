@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model CRM_WebApp.Models.Customer
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0 rounded-lg">
+                <div class="card-header bg-warning text-white text-center">
+                    <h3 class="font-weight-light">Customer Details</h3>
+                </div>
+                <div class="card-body p-4">
+                    <div class="customer-details text-center">
+                        <h4 class="font-weight-bold">@Model.FirstName @Model.LastName</h4>
+                        <hr />
+                        <p><strong>Email:</strong> @Model.Email</p>
+                        <p><strong>Phone:</strong> @Model.PhoneNumber</p>
+                        <p><strong>Address:</strong> @Model.Address</p>
+                        <p><strong>Created Date:</strong> @Model.CreatedDate.ToString("MMMM dd, yyyy")</p>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-action="Edit" asp-route-id="@Model.CustomerID" class="btn btn-warning rounded-pill">Edit</a>
+                    <a asp-action="Index" class="btn btn-secondary rounded-pill ml-3">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,63 @@
+﻿@model CRM_WebApp.Models.User
+
+@{
+    ViewData["Title"] = "LogIn";
+}
+
+<!-- Login Form -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg mt-5">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3>Log In</h3>
+                </div>
+                <div class="card-body">
+
+                    @* Display Login Error Message *@
+                    @if (ViewBag.Message != null)
+                    {
+                        <div class="alert alert-danger text-center">
+                            @ViewBag.Message
+                        </div>
+                    }
+
+                    <form asp-action="LogIn" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" placeholder="Enter your email" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Password" class="control-label"></label>
+                            <input asp-for="Password" type="password" class="form-control" placeholder="Enter your password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary btn-block">Log In</button>
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="card-footer text-center">
+                    <p>Not a user? <a asp-action="Signup" asp-controller="Account">Sign Up here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

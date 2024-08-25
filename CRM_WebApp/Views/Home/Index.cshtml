@@ -1,0 +1,81 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>@ViewData["Title"]</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+	<style>
+		/* site.css */
+		body {
+			background-color: #f0f4f8;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		h1 {
+			color: #007bff; /* Primary color */
+		}
+
+		h3 {
+			color: #6c757d; /* Secondary color */
+		}
+
+		p.lead {
+			color: #343a40; /* Darker text color for better readability */
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
+		.btn-primary {
+			background-color: #007bff;
+			border-color: #007bff;
+			border-radius: 50px;
+			padding: 15px 30px;
+			font-size: 18px;
+		}
+
+			.btn-primary:hover {
+				background-color: #0056b3;
+				border-color: #004494;
+			}
+
+		footer {
+			background-color: #f8f9fa;
+			color: #6c757d;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="text-center">
+			<!-- Welcome Message -->
+			<h1 class="display-4 text-primary mb-4">Welcome @ViewBag.usersession</h1>
+
+			<!-- Subheading -->
+			<h3 class="text-secondary mb-4">For Managing, Please Click On The Button Below</h3>
+
+			<!-- CRM Description -->
+			<p class="lead mb-4">
+				Customer Relationship Management (CRM) is a strategy and technology used by businesses to manage interactions with current and potential customers. The primary goals of CRM are to improve customer satisfaction, build long-term relationships, and increase sales and efficiency.
+			</p>
+
+			<!-- Call-to-Action Button -->
+			<a class="btn btn-primary btn-lg mt-4" asp-area="" asp-controller="Customer" asp-action="Index">Manage Customers</a>
+		</div>
+	</div>
+
+	<!-- Optional: Adding a footer -->
+	<footer class="bg-light text-center py-3 mt-5">
+		<p class="mb-0">© 2024 Your Company Name. All rights reserved.</p>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
